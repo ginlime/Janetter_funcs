@@ -1,10 +1,10 @@
-// Janetter —p@—˜—p©—RŠÖ”
+// Janetter ç”¨ã€€åˆ©ç”¨è‡ªç”±é–¢æ•°
 // 2012-2013 by @ginlime
 
 (function($, jn){
 
-// œouterHTML
-// innerHTML() ‚ªƒ^ƒO‚Ì’†‚ÉŠÜ‚Ü‚ê‚é HTML ‚ğ‘ÎÛ‚Æ‚µ‚Ä‚¢‚é‚Ì‚É‘Î‚µAouterHTML() ‚Í‚»‚ê©‘Ì‚ğŠÜ‚ß‚½ HTML ‚ğ•Ô‚·
+// â—outerHTML
+// innerHTML() ãŒã‚¿ã‚°ã®ä¸­ã«å«ã¾ã‚Œã‚‹ HTML ã‚’å¯¾è±¡ã¨ã—ã¦ã„ã‚‹ã®ã«å¯¾ã—ã€outerHTML() ã¯ãã‚Œè‡ªä½“ã‚’å«ã‚ãŸ HTML ã‚’è¿”ã™
 // http://www.yelotofu.com/2008/08/jquery-outerhtml/
 $.fn.outerHTML = function(s){
 	return (s)
@@ -12,23 +12,23 @@ $.fn.outerHTML = function(s){
 		: $("<p>").append(this.eq(0).clone()).html();
 }
 
-// œ‘S’uŠ·
-// dest ‚É‹ó•¶š—ñi''j‚ğw’è‚·‚é‚±‚Æ‚ÅA‘Síœ‚à‰Â”\
-// replace ‚ğg‚Á‚½•û‚ª‘‚¢‚ªA³‹K•\Œ»‚ÌƒGƒXƒP[ƒv‚ğ‚µ‚È‚¢‚Æ‚¢‚¯‚È‚¢‚Ì‚Åè”²‚«
+// â—å…¨ç½®æ›
+// dest ã«ç©ºæ–‡å­—åˆ—ï¼ˆ''ï¼‰ã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã§ã€å…¨å‰Šé™¤ã‚‚å¯èƒ½
+// replace ã‚’ä½¿ã£ãŸæ–¹ãŒæ—©ã„ãŒã€æ­£è¦è¡¨ç¾ã®ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚’ã—ãªã„ã¨ã„ã‘ãªã„ã®ã§æ‰‹æŠœã
 String.prototype.replaceAll = function(org, dest){
 	return this.split(org).join(dest);
 }
 
-// œ”š‚ÌŒ…‘µ‚¦
-// –‘O‚ÉA”š‚ğ•¶š—ñ‰»‚µ‚Ä‚¨‚­‚±‚Æ
-// w’è‚µ‚½Œ…‚É–‚½‚È‚¢ê‡‚Í 0 ‚Å–„‚ß‚é
-// u•¶š—ñ‚ÌŒJ‚è•Ô‚µv‚ª•K—v
+// â—æ•°å­—ã®æ¡æƒãˆ
+// äº‹å‰ã«ã€æ•°å­—ã‚’æ–‡å­—åˆ—åŒ–ã—ã¦ãŠãã“ã¨
+// æŒ‡å®šã—ãŸæ¡ã«æº€ãŸãªã„å ´åˆã¯ 0 ã§åŸ‹ã‚ã‚‹
+// ã€Œæ–‡å­—åˆ—ã®ç¹°ã‚Šè¿”ã—ã€ãŒå¿…è¦
 String.prototype.pad0 = function(digit){
 	var pad = '0';
 	return (this.length < digit) ? pad.repeatN(digit - this.length) + this : this;
 };
 
-// œ•¶š—ñ‚ÌŒJ‚è•Ô‚µ
+// â—æ–‡å­—åˆ—ã®ç¹°ã‚Šè¿”ã—
 String.prototype.repeatN = function(num){
 	var result = "";
 	while(num){
@@ -38,10 +38,10 @@ String.prototype.repeatN = function(num){
 	return result;
 };
 
-// œcss ‚Ì rgb •\‹L‚©‚ç HEX ‚É•ÏŠ·
-// rgb() ‚Ü‚½‚Í rgba() •\‹L‚Ì•¶š—ñ‚ğ HEX ‚É‚·‚é
-// unnecessaryNSF•Ô‚· HEX ‚Éƒiƒ“ƒo[ƒTƒCƒ“i#j‚ğ•K—v‚Æ‚·‚é‚©‚Ç‚¤‚©
-// u‘S’uŠ·vu”š‚ÌŒ…‘µ‚¦vu•¶š—ñ‚ÌŒJ‚è•Ô‚µv‚ª•K—v
+// â—css ã® rgb è¡¨è¨˜ã‹ã‚‰ HEX ã«å¤‰æ›
+// rgb() ã¾ãŸã¯ rgba() è¡¨è¨˜ã®æ–‡å­—åˆ—ã‚’ HEX ã«ã™ã‚‹
+// unnecessaryNSï¼šè¿”ã™ HEX ã«ãƒŠãƒ³ãƒãƒ¼ã‚µã‚¤ãƒ³ï¼ˆ#ï¼‰ã‚’å¿…è¦ã¨ã™ã‚‹ã‹ã©ã†ã‹
+// ã€Œå…¨ç½®æ›ã€ã€Œæ•°å­—ã®æ¡æƒãˆã€ã€Œæ–‡å­—åˆ—ã®ç¹°ã‚Šè¿”ã—ã€ãŒå¿…è¦
 String.prototype.RGBToColorCode = function(unnecessaryNS){
 	var src = this.replace(/rgba?\(/, '').replace(')', '').replaceAll(' ', ''),
 		numberSign = (unnecessaryNS) ? '' : '#',
@@ -50,8 +50,8 @@ String.prototype.RGBToColorCode = function(unnecessaryNS){
 	return result.toUpperCase();
 };
 
-// œF‚Ì HEX ‚©‚ç rgb •\‹L‚É•ÏŠ·
-// u•¶š—ñ‚ÌŒJ‚è•Ô‚µv‚ª•K—v
+// â—è‰²ã® HEX ã‹ã‚‰ rgb è¡¨è¨˜ã«å¤‰æ›
+// ã€Œæ–‡å­—åˆ—ã®ç¹°ã‚Šè¿”ã—ã€ãŒå¿…è¦
 String.prototype.ColorCodeToRGB = function(){
 	var src = this.replace('#',''),
 		CCAry = [];
@@ -67,17 +67,17 @@ String.prototype.ColorCodeToRGB = function(){
 	return CCAry.join(',');
 };
 
-// œcommon.js ‚É‚ ‚é format() ‚É”z—ñ‚ğ—^‚¦‚Äˆ—
+// â—common.js ã«ã‚ã‚‹ format() ã«é…åˆ—ã‚’ä¸ãˆã¦å‡¦ç†
 String.prototype.formatWithArray = function(Array){
 	return String.prototype.format.apply(this,Array);
 };
 
-// œ•¶š—ñ’†‚Ì‰üs‚ğ <br> ‚É’u‚«Š·‚¦‚é
+// â—æ–‡å­—åˆ—ä¸­ã®æ”¹è¡Œã‚’ <br> ã«ç½®ãæ›ãˆã‚‹
 String.prototype.breakToTag = function(){
 	return this.replace(/\n/g, '<br>');
 };
 
-// œ•¶š—ñ‚ÉŠÜ‚Ü‚ê‚éƒXƒNƒŠƒvƒg‚Æ‚µ‚ÄÀs‰Â”\‚È—v‘f‚ğAÀ‘ÌQÆ‰»‚Ü‚½‚Íœ‹‚µ‚Ä–³Œø‰»‚·‚é
+// â—æ–‡å­—åˆ—ã«å«ã¾ã‚Œã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆã¨ã—ã¦å®Ÿè¡Œå¯èƒ½ãªè¦ç´ ã‚’ã€å®Ÿä½“å‚ç…§åŒ–ã¾ãŸã¯é™¤å»ã—ã¦ç„¡åŠ¹åŒ–ã™ã‚‹
 String.prototype.killScript = function(){
 	var scriptRE = new RegExp('<(/?script[^>]*)>','gi'),
 		scriptReplaced = '&lt;$1&gt;',
@@ -86,25 +86,25 @@ String.prototype.killScript = function(){
 	return this.replace(scriptRE,scriptReplaced).replace(eventRE,eventReplaced);
 };
 
-// œ•¶š—ñ‚©‚ç HTML ƒ^ƒO‚ğœ‹
+// â—æ–‡å­—åˆ—ã‹ã‚‰ HTML ã‚¿ã‚°ã‚’é™¤å»
 String.prototype.removeTag = function(){
 	return $('<div />').append(this).text();
 };
 
-// œƒeƒLƒXƒg‚ğ‰üs‚È‚µAHTML ƒ^ƒO‚È‚µ‚ÌƒvƒŒ[ƒ“ƒeƒLƒXƒg‚É‚·‚é
-// u‘S’uŠ·v‚ª•K—v
+// â—ãƒ†ã‚­ã‚¹ãƒˆã‚’æ”¹è¡Œãªã—ã€HTML ã‚¿ã‚°ãªã—ã®ãƒ—ãƒ¬ãƒ¼ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã«ã™ã‚‹
+// ã€Œå…¨ç½®æ›ã€ãŒå¿…è¦
 _textPlainize = function(text){
 	return $('<div />').append(text.replaceAll("\n",'').replaceAll("\r",'')).text();
 }
 
-// œƒeƒLƒXƒg‚Ì‰üs‚ğíœ‚·‚é
-// u‘S’uŠ·v‚ª•K—v
+// â—ãƒ†ã‚­ã‚¹ãƒˆã®æ”¹è¡Œã‚’å‰Šé™¤ã™ã‚‹
+// ã€Œå…¨ç½®æ›ã€ãŒå¿…è¦
 _removeBreak = function(text){
 	return text.replaceAll("\n",'').replaceAll("\r",'');
 }
 
-// œHTML ƒ^ƒO¬‚¶‚è‚ÌƒeƒLƒXƒg‚©‚çAƒnƒbƒVƒ…ƒ^ƒOƒŠƒ“ƒN‚Ì‚İE‚·
-// u‘S’uŠ·vuouterHTMLv‚ª•K—v
+// â—HTML ã‚¿ã‚°æ··ã˜ã‚Šã®ãƒ†ã‚­ã‚¹ãƒˆã‹ã‚‰ã€ãƒãƒƒã‚·ãƒ¥ã‚¿ã‚°ãƒªãƒ³ã‚¯ã®ã¿æ®ºã™
+// ã€Œå…¨ç½®æ›ã€ã€ŒouterHTMLã€ãŒå¿…è¦
 _killHashtags = function(text){
 	var dataNode = $('<div>').append(text);
 	$('a.hashtag', dataNode).each(function(){
@@ -113,8 +113,8 @@ _killHashtags = function(text){
 	return text;
 }
 
-// œ”z—ñ‚Ìd•¡‚ğæ‚èœ‚­
-// 2 ‚Â‚Ì”z—ñ‚ğŒ‹‡‚µ‚Äd•¡‚ğæ‚èœ‚­ê‡‚ÍAcommon.js ‚É‚ ‚é uniqueConcat ‚ğg‚¤•û‚ª—Ç‚¢
+// â—é…åˆ—ã®é‡è¤‡ã‚’å–ã‚Šé™¤ã
+// 2 ã¤ã®é…åˆ—ã‚’çµåˆã—ã¦é‡è¤‡ã‚’å–ã‚Šé™¤ãå ´åˆã¯ã€common.js ã«ã‚ã‚‹ uniqueConcat ã‚’ä½¿ã†æ–¹ãŒè‰¯ã„
 Array.prototype.unique = function(){
 	var targetArray = this,
 		targetArrayLen = targetArray.length,
@@ -131,10 +131,10 @@ Array.prototype.unique = function(){
 	return resultArray;
 };
 
-// œ”z—ñ‚É‚ ‚é’l‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©
+// â—é…åˆ—ã«ã‚ã‚‹å€¤ãŒå«ã¾ã‚Œã¦ã„ã‚‹ã‹ã©ã†ã‹
 // http://text.readalittle.net/article.php?id=135
-// ‘½ŸŒ³”z—ñ‚â”z—ñ’†‚ÌƒIƒuƒWƒFƒNƒg‚Ü‚Å’²‚×‚é‚æ‚¤‚È‰ü—Ç”Å‚à‚ ‚é‚æ‚¤‚¾‚¯‚ÇA‚»‚±‚Ü‚Å•K—v‚È‚¢‚Ì‚Å
-// ‚ ‚ÆAjQuery.inArray ‚Í”÷–­
+// å¤šæ¬¡å…ƒé…åˆ—ã‚„é…åˆ—ä¸­ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¾ã§èª¿ã¹ã‚‹ã‚ˆã†ãªæ”¹è‰¯ç‰ˆã‚‚ã‚ã‚‹ã‚ˆã†ã ã‘ã©ã€ãã“ã¾ã§å¿…è¦ãªã„ã®ã§
+// ã‚ã¨ã€jQuery.inArray ã¯å¾®å¦™
 Array.prototype.contains = function(value){
 	for(var i in this){
 		if(this.hasOwnProperty(i) && this[i] === value){
@@ -144,14 +144,14 @@ Array.prototype.contains = function(value){
 	return false;
 };
 
-// œ”z—ñ‚©‚ç‹ó‚Ì€–Ú‚ğæ‚èœ‚­
-// doTrimFtrue/false ‹ó•¶š‚Ì trim ‚ğs‚¤‚©‚Ç‚¤‚©
+// â—é…åˆ—ã‹ã‚‰ç©ºã®é …ç›®ã‚’å–ã‚Šé™¤ã
+// doTrimï¼štrue/false ç©ºæ–‡å­—ã® trim ã‚’è¡Œã†ã‹ã©ã†ã‹
 Array.prototype.removeblank = function(doTrim){
 	var targetArray = this,
 		targetArrayLen = targetArray.length,
 		resultArray = new Array();
 	for(var i = 0; i < targetArrayLen; i++){
-		var tmpRes = (doTrim) ? targetArray[i].trim() :targetArray[i];	// common.js ‚Ì trim() ‚ğg—p
+		var tmpRes = (doTrim) ? targetArray[i].trim() :targetArray[i];	// common.js ã® trim() ã‚’ä½¿ç”¨
 		if (tmpRes != ''){
 			resultArray.push(targetArray[i]);
 		}
@@ -159,7 +159,7 @@ Array.prototype.removeblank = function(doTrim){
 	return resultArray;
 };
 
-// œ”z—ñ‚Ì‘S‚Ä‚Ì€–Ú‚©‚çw’è‚³‚ê‚½•¶š—ñi³‹K•\Œ»j‚ğæ‚èœ‚­
+// â—é…åˆ—ã®å…¨ã¦ã®é …ç›®ã‹ã‚‰æŒ‡å®šã•ã‚ŒãŸæ–‡å­—åˆ—ï¼ˆæ­£è¦è¡¨ç¾ï¼‰ã‚’å–ã‚Šé™¤ã
 Array.prototype.removestr = function(str, global, ignoreCase){
 	var targetArray = this,
 		targetArrayLen = targetArray.length,
@@ -173,7 +173,7 @@ Array.prototype.removestr = function(str, global, ignoreCase){
 	return resultArray;
 };
 
-// œ”z—ñ‚©‚çw’è•¶š”‚æ‚è’·‚¢€–Ú‚ğæ‚èœ‚­
+// â—é…åˆ—ã‹ã‚‰æŒ‡å®šæ–‡å­—æ•°ã‚ˆã‚Šé•·ã„é …ç›®ã‚’å–ã‚Šé™¤ã
 Array.prototype.limitlength = function(len){
 	var targetArray = this,
 		targetArrayLen = targetArray.length,
@@ -186,7 +186,7 @@ Array.prototype.limitlength = function(len){
 	return resultArray;
 };
 
-// œ”z—ñ‚©‚ç³‹K•\Œ»‚Éƒ}ƒbƒ`‚µ‚È‚¢€–Ú‚ğæ‚èœ‚­
+// â—é…åˆ—ã‹ã‚‰æ­£è¦è¡¨ç¾ã«ãƒãƒƒãƒã—ãªã„é …ç›®ã‚’å–ã‚Šé™¤ã
 Array.prototype.removenotmatch = function(regExp){
 	var targetArray = this,
 		targetArrayLen = targetArray.length,
@@ -200,9 +200,9 @@ Array.prototype.removenotmatch = function(regExp){
 	return resultArray;
 };
 
-// œƒtƒH[ƒ€ƒp[ƒc‚É’l‚ğƒZƒbƒg‚·‚é
-// “ü—Í’l‚Ì‘Ã“–«‚Íƒ`ƒFƒbƒN‚µ‚È‚¢
-// fileAimageAbuttonAsubmitAreset ‚Í“–‘RƒXƒ‹[
+// â—ãƒ•ã‚©ãƒ¼ãƒ ãƒ‘ãƒ¼ãƒ„ã«å€¤ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
+// å…¥åŠ›å€¤ã®å¦¥å½“æ€§ã¯ãƒã‚§ãƒƒã‚¯ã—ãªã„
+// fileã€imageã€buttonã€submitã€reset ã¯å½“ç„¶ã‚¹ãƒ«ãƒ¼
 setValueToForm = function(id,value){
 	var targetNode = $('#'+id),
 		targetType = targetNode.attr('type') || targetNode.prop('tagName');
@@ -214,7 +214,7 @@ setValueToForm = function(id,value){
 		// HTML5
 		case 'number':
 		case 'range':
-		// HTML5 ccJanetter ‚Å•K—v‚ ‚é‚Ì‚©H
+		// HTML5 â€¦â€¦Janetter ã§å¿…è¦ã‚ã‚‹ã®ã‹ï¼Ÿ
 		case 'search':
 		case 'tel':
 		case 'url':
@@ -229,8 +229,8 @@ setValueToForm = function(id,value){
 			targetNode.val(value);
 			break;
 		case 'checkbox':
-		case 'radio':	// ¦ŒÂ•Ê‚Ì‘I‘ğˆ‚É id ‚ª•K—v
-			if(typeof value=='string'){	// ‚¢‚¿‚¨‚¤Œ^‚Ìƒ~ƒX‚ğƒtƒHƒ[
+		case 'radio':	// â€»å€‹åˆ¥ã®é¸æŠè‚¢ã« id ãŒå¿…è¦
+			if(typeof value=='string'){	// ã„ã¡ãŠã†å‹ã®ãƒŸã‚¹ã‚’ãƒ•ã‚©ãƒ­ãƒ¼
 				if(value.toLowerCase()=='true')
 					value = true;
 				else if(value.toLowerCase()=='false')
@@ -243,10 +243,10 @@ setValueToForm = function(id,value){
 	}
 };
 
-// œw’è‚³‚ê‚½æ‘cƒm[ƒh‚Ü‚Å‘k‚Á‚Ä—v‘f‚Ìâ‘ÎˆÊ’u‚ğæ“¾‚·‚é
-// ‚½‚Ô‚ñAposition ‚ª relative ‚Ìê‡‚Å‚àg‚¦‚é‚Í‚¸
-// ŠK‘w‚ª[‚¢ê‡‚Íg‚í‚È‚¢•û‚ª‚¢‚¢
-getAbsolutePositionRunningBack = function(elem, ancestor){	// ancestor ‚Í selector ‚Åw’è
+// â—æŒ‡å®šã•ã‚ŒãŸå…ˆç¥–ãƒãƒ¼ãƒ‰ã¾ã§é¡ã£ã¦è¦ç´ ã®çµ¶å¯¾ä½ç½®ã‚’å–å¾—ã™ã‚‹
+// ãŸã¶ã‚“ã€position ãŒ relative ã®å ´åˆã§ã‚‚ä½¿ãˆã‚‹ã¯ãš
+// éšå±¤ãŒæ·±ã„å ´åˆã¯ä½¿ã‚ãªã„æ–¹ãŒã„ã„
+getAbsolutePositionRunningBack = function(elem, ancestor){	// ancestor ã¯ selector ã§æŒ‡å®š
 	var left = elem.prop('offsetLeft'),
 		top = elem.prop('offsetTop');
 	do{
@@ -257,17 +257,17 @@ getAbsolutePositionRunningBack = function(elem, ancestor){	// ancestor ‚Í select
 	return {'left':left,'top':top};
 };
 
-// œƒvƒ‰ƒbƒgƒtƒH[ƒ€‚Ì”»’è
+// â—ãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ ã®åˆ¤å®š
 function _determinPlatform(){
 	return (navigator.userAgent.indexOf('Windows')>=0) ? 'Win' :
 			(navigator.userAgent.indexOf('Macintosh')>=0) ? 'Mac' : 'other';
 }
 
-// œw’è•¶š”‚Ìƒ‰ƒ“ƒ_ƒ€•¶š—ñ‚ğ¶¬
+// â—æŒ‡å®šæ–‡å­—æ•°ã®ãƒ©ãƒ³ãƒ€ãƒ æ–‡å­—åˆ—ã‚’ç”Ÿæˆ
 // http://blog.bornneet.com/Entry/143/
 // http://webengineerlife.com/2011/10/20/javascript-random-text/
-// 	lenF•K—v‚Èƒ‰ƒ“ƒ_ƒ€•¶š—ñ‚Ì•¶š”
-// 	additionalF0-9AA-ZAa-z ˆÈŠO‚É’Ç‰Á‚µ‚½‚¢ê‡BƒVƒ“ƒOƒ‹ƒNƒH[ƒe[ƒVƒ‡ƒ“‚Æƒ_ƒuƒ‹ƒNƒH[ƒe[ƒVƒ‡ƒ“‚Íw’è•s‰Â
+// 	lenï¼šå¿…è¦ãªãƒ©ãƒ³ãƒ€ãƒ æ–‡å­—åˆ—ã®æ–‡å­—æ•°
+// 	additionalï¼š0-9ã€A-Zã€a-z ä»¥å¤–ã«è¿½åŠ ã—ãŸã„å ´åˆã€‚ã‚·ãƒ³ã‚°ãƒ«ã‚¯ã‚©ãƒ¼ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã¨ãƒ€ãƒ–ãƒ«ã‚¯ã‚©ãƒ¼ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã¯æŒ‡å®šä¸å¯
 randomStr = function(len, additional){
 	var srcAry = [],
 		addLen = (additional) ? additional.length : 0,
@@ -285,7 +285,7 @@ randomStr = function(len, additional){
 	if(additional){
 		for(var i = 0; i < addLen; i++){
 			var tmpChar = additional.charAt(i);
-			if(tmpChar!="'" && tmpChar!='"')	// ƒNƒH[ƒe[ƒVƒ‡ƒ“—Ş‚Íg—p•s‰Â
+			if(tmpChar!="'" && tmpChar!='"')	// ã‚¯ã‚©ãƒ¼ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³é¡ã¯ä½¿ç”¨ä¸å¯
 				srcAry.push(tmpChar);
 		}
 	}
@@ -296,30 +296,30 @@ randomStr = function(len, additional){
 	return resStr;
 }
 
-// œİ’è‚Ì“¯Šú‚ğæ‚é
-// u‘S’uŠ·vuw’è•¶š”‚Ìƒ‰ƒ“ƒ_ƒ€•¶š—ñ‚ğ¶¬v‚ª•K—v
-// ƒƒCƒ“‰æ–Ê‚ğW–ñ“_‚Æ‚µ‚Äˆµ‚¢A‚»‚±‚©‚çƒvƒƒtƒB[ƒ‹‰æ–Ê‚Æİ’è‰æ–ÊA’Ê’mƒ|ƒbƒvƒAƒbƒv‚ÉŠgU‚·‚é
-// ¦ˆø”‚ğ’P‘Ì‚ÌƒIƒuƒWƒFƒNƒg‚É‚µ‚ÄAã‹L‚ÌƒvƒƒpƒeƒB‚ğŠÜ‚ß‚éŒ`‚É‚·‚é‚±‚Æ‚à‰Â”\
-// 	srcWindowFŒ³‚Ì‰æ–ÊB‹N“_‚Ì‰æ–Ê‚Åw’èB_Janetter_Window_Type ‚Åæ“¾‚Å‚«‚é‚Ì‚Æ“¯‚¶‚à‚ÌB•K{iƒIƒuƒWƒFƒNƒg“n‚µ‚Ìê‡A©“®‚Å•â‚¤‚½‚ß‚È‚­‚Ä‚à—Ç‚¢j
-// 	isSrcProfileFƒvƒƒtƒB[ƒ‹‰æ–Ê‚ğ‹N“_‚ÉÀs‚·‚éÛ‚ÉAtrue ‚ğw’è‚·‚éitrue/falsejBƒvƒƒtƒB[ƒ‹‰æ–Ê‚ÅÀs‚·‚éê‡‚É‚Í•K{iƒIƒuƒWƒFƒNƒg“n‚µ‚Ìê‡A©“®‚Å•â‚¤‚½‚ß‚È‚­‚Ä‚à—Ç‚¢jBmain ‚Æ profile ‚Å‹¤’Ê‚µ‚ÄÀs‚·‚éê‡‚Í(_Janetter_Window_Type=='profile')‚ğw’è‚·‚é‚ÆŠy
-// 	configNameF•Û‘¶‚µ‚½‚¢İ’è€–Ú‚Ì–¼ÌB•K{
-// 	configDataF•Û‘¶‚µ‚½‚¢İ’è€–Ú‚Ìƒf[ƒ^B•K{
-// 	configIsBooleF•Û‘¶‚µ‚½‚¢İ’è€–Ú‚Ìƒf[ƒ^‚ª Boolean ‚©‚Ç‚¤‚©itrue/falsejB–³w’è‚Ìê‡‚Í false ˆµ‚¢BƒIƒuƒWƒFƒNƒg“n‚µ‚Ìê‡A©“®‚Å•â‚¤‚Ì‚Å•s—v
-// 	funcExecOnMainF“¯Šú‚ğæ‚Á‚½Œã‚ÉƒƒCƒ“‰æ–Ê‚ÅÀs‚·‚éŠÖ”–¼i•¶š—ñ‚Åw’èj
-// 	funcExecOnProfF“¯Šú‚ğæ‚Á‚½Œã‚ÉƒvƒƒtƒB[ƒ‹‰æ–Ê‚ÅÀs‚·‚éŠÖ”–¼i•¶š—ñ‚Åw’èj
-// 	funcExecOnConfF“¯Šú‚ğæ‚Á‚½Œã‚Éİ’è‰æ–Ê‚ÅÀs‚·‚éŠÖ”–¼i•¶š—ñ‚Åw’èj
-// 	funcExecOnNoticeF“¯Šú‚ğæ‚Á‚½Œã‚É’Ê’mƒ|ƒbƒvƒAƒbƒv‰æ–Ê‚ÅÀs‚·‚éŠÖ”–¼i•¶š—ñ‚Åw’èj
-// 	dontSaveFƒƒCƒ“‰æ–Ê‚Å•Û‘¶‚ğ‚µ‚È‚¢itrue/falsejB•¡”‚Ìİ’è€–Ú‚Ì“¯Šú‚ğæ‚éê‡‚È‚Ç˜A‘±‚µ‚Ä syncConfig ‚ğ‚©‚¯‚éê‡‚Ég‚¤
-// 	profTrackFƒvƒƒtƒB[ƒ‹‰æ–Ê‚ÅÀs‚µ‚½‚Æ‚«AƒƒCƒ“‰æ–Ê‚©‚ç‚Ì–ß‚è‚ğƒgƒ‰ƒbƒLƒ“ƒO‚·‚é‚½‚ß‚Ì•¶š—ñB©“®¶¬‚·‚é‚½‚ßA’Êí‚Íw’è‚È‚µ
-// ¦ufuncExecOn`v‚ÌŠÖ”‚Éˆø”‚Í“n‚¹‚È‚¢‚Ì‚ÅAˆø”‚ª•s—v‚ÈŒ`‚É‚µ‚Ä‚¨‚­‚±‚Æ
-// ¦«‚Ì•Ï”‚à•K—v
+// â—è¨­å®šã®åŒæœŸã‚’å–ã‚‹
+// ã€Œå…¨ç½®æ›ã€ã€ŒæŒ‡å®šæ–‡å­—æ•°ã®ãƒ©ãƒ³ãƒ€ãƒ æ–‡å­—åˆ—ã‚’ç”Ÿæˆã€ãŒå¿…è¦
+// ãƒ¡ã‚¤ãƒ³ç”»é¢ã‚’é›†ç´„ç‚¹ã¨ã—ã¦æ‰±ã„ã€ãã“ã‹ã‚‰ãƒ—ãƒ­ãƒ•ã‚£ãƒ¼ãƒ«ç”»é¢ã¨è¨­å®šç”»é¢ã€é€šçŸ¥ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ã«æ‹¡æ•£ã™ã‚‹
+// â€»å¼•æ•°ã‚’å˜ä½“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ã—ã¦ã€ä¸Šè¨˜ã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚’å«ã‚ã‚‹å½¢ã«ã™ã‚‹ã“ã¨ã‚‚å¯èƒ½
+// 	srcWindowï¼šå…ƒã®ç”»é¢ã€‚èµ·ç‚¹ã®ç”»é¢ã§æŒ‡å®šã€‚_Janetter_Window_Type ã§å–å¾—ã§ãã‚‹ã®ã¨åŒã˜ã‚‚ã®ã€‚å¿…é ˆï¼ˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆæ¸¡ã—ã®å ´åˆã€è‡ªå‹•ã§è£œã†ãŸã‚ãªãã¦ã‚‚è‰¯ã„ï¼‰
+// 	isSrcProfileï¼šãƒ—ãƒ­ãƒ•ã‚£ãƒ¼ãƒ«ç”»é¢ã‚’èµ·ç‚¹ã«å®Ÿè¡Œã™ã‚‹éš›ã«ã€true ã‚’æŒ‡å®šã™ã‚‹ï¼ˆtrue/falseï¼‰ã€‚ãƒ—ãƒ­ãƒ•ã‚£ãƒ¼ãƒ«ç”»é¢ã§å®Ÿè¡Œã™ã‚‹å ´åˆã«ã¯å¿…é ˆï¼ˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆæ¸¡ã—ã®å ´åˆã€è‡ªå‹•ã§è£œã†ãŸã‚ãªãã¦ã‚‚è‰¯ã„ï¼‰ã€‚main ã¨ profile ã§å…±é€šã—ã¦å®Ÿè¡Œã™ã‚‹å ´åˆã¯(_Janetter_Window_Type=='profile')ã‚’æŒ‡å®šã™ã‚‹ã¨æ¥½
+// 	configNameï¼šä¿å­˜ã—ãŸã„è¨­å®šé …ç›®ã®åç§°ã€‚å¿…é ˆ
+// 	configDataï¼šä¿å­˜ã—ãŸã„è¨­å®šé …ç›®ã®ãƒ‡ãƒ¼ã‚¿ã€‚å¿…é ˆ
+// 	configIsBooleï¼šä¿å­˜ã—ãŸã„è¨­å®šé …ç›®ã®ãƒ‡ãƒ¼ã‚¿ãŒ Boolean ã‹ã©ã†ã‹ï¼ˆtrue/falseï¼‰ã€‚ç„¡æŒ‡å®šã®å ´åˆã¯ false æ‰±ã„ã€‚ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆæ¸¡ã—ã®å ´åˆã€è‡ªå‹•ã§è£œã†ã®ã§ä¸è¦
+// 	funcExecOnMainï¼šåŒæœŸã‚’å–ã£ãŸå¾Œã«ãƒ¡ã‚¤ãƒ³ç”»é¢ã§å®Ÿè¡Œã™ã‚‹é–¢æ•°åï¼ˆæ–‡å­—åˆ—ã§æŒ‡å®šï¼‰
+// 	funcExecOnProfï¼šåŒæœŸã‚’å–ã£ãŸå¾Œã«ãƒ—ãƒ­ãƒ•ã‚£ãƒ¼ãƒ«ç”»é¢ã§å®Ÿè¡Œã™ã‚‹é–¢æ•°åï¼ˆæ–‡å­—åˆ—ã§æŒ‡å®šï¼‰
+// 	funcExecOnConfï¼šåŒæœŸã‚’å–ã£ãŸå¾Œã«è¨­å®šç”»é¢ã§å®Ÿè¡Œã™ã‚‹é–¢æ•°åï¼ˆæ–‡å­—åˆ—ã§æŒ‡å®šï¼‰
+// 	funcExecOnNoticeï¼šåŒæœŸã‚’å–ã£ãŸå¾Œã«é€šçŸ¥ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ç”»é¢ã§å®Ÿè¡Œã™ã‚‹é–¢æ•°åï¼ˆæ–‡å­—åˆ—ã§æŒ‡å®šï¼‰
+// 	dontSaveï¼šãƒ¡ã‚¤ãƒ³ç”»é¢ã§ä¿å­˜ã‚’ã—ãªã„ï¼ˆtrue/falseï¼‰ã€‚è¤‡æ•°ã®è¨­å®šé …ç›®ã®åŒæœŸã‚’å–ã‚‹å ´åˆãªã©é€£ç¶šã—ã¦ syncConfig ã‚’ã‹ã‘ã‚‹å ´åˆã«ä½¿ã†
+// 	profTrackï¼šãƒ—ãƒ­ãƒ•ã‚£ãƒ¼ãƒ«ç”»é¢ã§å®Ÿè¡Œã—ãŸã¨ãã€ãƒ¡ã‚¤ãƒ³ç”»é¢ã‹ã‚‰ã®æˆ»ã‚Šã‚’ãƒˆãƒ©ãƒƒã‚­ãƒ³ã‚°ã™ã‚‹ãŸã‚ã®æ–‡å­—åˆ—ã€‚è‡ªå‹•ç”Ÿæˆã™ã‚‹ãŸã‚ã€é€šå¸¸ã¯æŒ‡å®šãªã—
+// â€»ã€ŒfuncExecOnï½ã€ã®é–¢æ•°ã«å¼•æ•°ã¯æ¸¡ã›ãªã„ã®ã§ã€å¼•æ•°ãŒä¸è¦ãªå½¢ã«ã—ã¦ãŠãã“ã¨
+// â€»â†“ã®å¤‰æ•°ã‚‚å¿…è¦
 var isSrcProfileWindow = {};
 syncConfig = function(srcWindow, isSrcProfile, configName, configData, configIsBoole, funcExecOnMain, funcExecOnProf, funcExecOnConf, funcExecOnNotice, dontSave, profTrack){
 	var dataIsEmpty = (configData==undefined),
 		lackSrcProfile = (srcWindow=='profile' && isSrcProfile==undefined);
-	// ˆø”‚ªƒIƒuƒWƒFƒNƒg‚Ìê‡‚ÉA•Ï”‚É“WŠJ
+	// å¼•æ•°ãŒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å ´åˆã«ã€å¤‰æ•°ã«å±•é–‹
 	if(typeof arguments[0]=='object'){
-		isSrcProfile = arguments[0].isSrcProfile || (_Janetter_Window_Type=='profile');	// ƒIƒuƒWƒFƒNƒg‚Åˆø”‚ª“n‚³‚ê‚éê‡‚Íƒ†[ƒU[w’è‚ÆŒ©‚È‚µ‚Äw’è‚ª‚È‚­‚Ä‚à•â‚¤
+		isSrcProfile = arguments[0].isSrcProfile || (_Janetter_Window_Type=='profile');	// ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã§å¼•æ•°ãŒæ¸¡ã•ã‚Œã‚‹å ´åˆã¯ãƒ¦ãƒ¼ã‚¶ãƒ¼æŒ‡å®šã¨è¦‹ãªã—ã¦æŒ‡å®šãŒãªãã¦ã‚‚è£œã†
 		configName = arguments[0].configName || '';
 		configData = arguments[0].configData;
 		dataIsEmpty = (arguments[0].configData==undefined);
@@ -329,28 +329,28 @@ syncConfig = function(srcWindow, isSrcProfile, configName, configData, configIsB
 		funcExecOnConf = arguments[0].funcExecOnConf || '';
 		funcExecOnNotice = arguments[0].funcExecOnNotice || '';
 		dontSave = arguments[0].dontSave || false;
-		profTrack = '';	// profTrack ‚Í©“®¶¬‚·‚é‚½‚ßAƒIƒuƒWƒFƒNƒg‚Åˆø”‚ª“n‚³‚ê‚éê‡‚Íƒ†[ƒU[w’è‚ÆŒ©‚È‚µ‚Äw’è‚È‚µ
-		srcWindow = arguments[0].srcWindow || _Janetter_Window_Type;	// srcWindow ‚Í arguments[0] ‚È‚Ì‚ÅŒã‰ñ‚µBƒIƒuƒWƒFƒNƒg‚Åˆø”‚ª“n‚³‚ê‚éê‡‚Íƒ†[ƒU[w’è‚ÆŒ©‚È‚µ‚Äw’è‚ª‚È‚­‚Ä‚à•â‚¤
+		profTrack = '';	// profTrack ã¯è‡ªå‹•ç”Ÿæˆã™ã‚‹ãŸã‚ã€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã§å¼•æ•°ãŒæ¸¡ã•ã‚Œã‚‹å ´åˆã¯ãƒ¦ãƒ¼ã‚¶ãƒ¼æŒ‡å®šã¨è¦‹ãªã—ã¦æŒ‡å®šãªã—
+		srcWindow = arguments[0].srcWindow || _Janetter_Window_Type;	// srcWindow ã¯ arguments[0] ãªã®ã§å¾Œå›ã—ã€‚ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã§å¼•æ•°ãŒæ¸¡ã•ã‚Œã‚‹å ´åˆã¯ãƒ¦ãƒ¼ã‚¶ãƒ¼æŒ‡å®šã¨è¦‹ãªã—ã¦æŒ‡å®šãŒãªãã¦ã‚‚è£œã†
 	}
-	// •K{€–Ú‚Ìƒ`ƒFƒbƒN
+	// å¿…é ˆé …ç›®ã®ãƒã‚§ãƒƒã‚¯
 	if(!srcWindow){
-		console.warn('syncConfigFsrcWindow ‚ª•s‘«‚µ‚Ä‚¢‚Ü‚·B');
+		console.warn('syncConfigï¼šsrcWindow ãŒä¸è¶³ã—ã¦ã„ã¾ã™ã€‚');
 		return false;
 	}
 	if(!configName){
-		console.warn('syncConfigFconfigName ‚ª•s‘«‚µ‚Ä‚¢‚Ü‚·B');
+		console.warn('syncConfigï¼šconfigName ãŒä¸è¶³ã—ã¦ã„ã¾ã™ã€‚');
 		return false;
 	}
 	if(dataIsEmpty){
-		console.warn('syncConfigFconfigData ‚ª•s‘«‚µ‚Ä‚¢‚Ü‚·B');
+		console.warn('syncConfigï¼šconfigData ãŒä¸è¶³ã—ã¦ã„ã¾ã™ã€‚');
 		return false;
 	}
 	if(lackSrcProfile){
-		console.warn('syncConfigFisSrcProfile ‚ª•s‘«‚µ‚Ä‚¢‚Ü‚·B');
+		console.warn('syncConfigï¼šisSrcProfile ãŒä¸è¶³ã—ã¦ã„ã¾ã™ã€‚');
 		return false;
 	}
-	// isSrcProfile ‚Æ configIsBooleAdontSave ‚Í webViewAction ‚Å‚Ìˆø‚«“n‚µ‚É
-	// Boolean ‚ª String ‚É•ÏŠ·‚³‚ê‚Ä‚¢‚éƒP[ƒX‚ª‚ ‚é‚½‚ßA•â³‚·‚é
+	// isSrcProfile ã¨ configIsBooleã€dontSave ã¯ webViewAction ã§ã®å¼•ãæ¸¡ã—æ™‚ã«
+	// Boolean ãŒ String ã«å¤‰æ›ã•ã‚Œã¦ã„ã‚‹ã‚±ãƒ¼ã‚¹ãŒã‚ã‚‹ãŸã‚ã€è£œæ­£ã™ã‚‹
 	isSrcProfile = (typeof isSrcProfile=='string') ?
 						(isSrcProfile=='true') ?
 							true :
@@ -366,90 +366,90 @@ syncConfig = function(srcWindow, isSrcProfile, configName, configData, configIsB
 							true :
 							false :
 						dontSave;
-	// ˆø‚«“n‚µ—pƒf[ƒ^‚ğ configData ‚ÉA•Û‘¶—pƒf[ƒ^‚ğ configDataSave ‚É•ª‚¯‚é
+	// å¼•ãæ¸¡ã—ç”¨ãƒ‡ãƒ¼ã‚¿ã‚’ configData ã«ã€ä¿å­˜ç”¨ãƒ‡ãƒ¼ã‚¿ã‚’ configDataSave ã«åˆ†ã‘ã‚‹
 	var configDataSave = configData;
-	// webViewAction ‚Å‚Ìˆø‚«“n‚µ‚É Boolean ‚ª String ‚É•ÏŠ·‚³‚ê‚Ä‚¢‚éƒP[ƒX‚ª‚ ‚é‚½‚ßA
-	// configIsBoole ‚Å—^‚¦‚ç‚ê‚½î•ñ‚É‰ˆ‚Á‚Ä•Û‘¶—pƒf[ƒ^‚ğ•â³‚·‚é
+	// webViewAction ã§ã®å¼•ãæ¸¡ã—æ™‚ã« Boolean ãŒ String ã«å¤‰æ›ã•ã‚Œã¦ã„ã‚‹ã‚±ãƒ¼ã‚¹ãŒã‚ã‚‹ãŸã‚ã€
+	// configIsBoole ã§ä¸ãˆã‚‰ã‚ŒãŸæƒ…å ±ã«æ²¿ã£ã¦ä¿å­˜ç”¨ãƒ‡ãƒ¼ã‚¿ã‚’è£œæ­£ã™ã‚‹
 	configDataSave = (configIsBoole && typeof configDataSave=='string') ?
 						(configDataSave=='true') ?
 							true :
 							false :
 						configDataSave;
-	// •Û‘¶—pƒf[ƒ^‚ª•¶š—ñ‚Ìê‡Aƒ_ƒuƒ‹ƒNƒH[ƒe[ƒVƒ‡ƒ“‚ğƒGƒ“ƒR[ƒhi•¶šÀ‘ÌQÆ‰»j/ƒfƒR[ƒh‚·‚é
-	// Œ³‚Ìƒf[ƒ^‚ª Boolean ‚ÌƒP[ƒX‚Íã‹L‚Å‘I•Ê‚ªŠ®—¹‚µ‚Ä‚¢‚é‚Ì‚Å‹C‚É‚µ‚È‚­‚Ä—Ç‚¢
+	// ä¿å­˜ç”¨ãƒ‡ãƒ¼ã‚¿ãŒæ–‡å­—åˆ—ã®å ´åˆã€ãƒ€ãƒ–ãƒ«ã‚¯ã‚©ãƒ¼ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã‚’ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ï¼ˆæ–‡å­—å®Ÿä½“å‚ç…§åŒ–ï¼‰/ãƒ‡ã‚³ãƒ¼ãƒ‰ã™ã‚‹
+	// å…ƒã®ãƒ‡ãƒ¼ã‚¿ãŒ Boolean ã®ã‚±ãƒ¼ã‚¹ã¯ä¸Šè¨˜ã§é¸åˆ¥ãŒå®Œäº†ã—ã¦ã„ã‚‹ã®ã§æ°—ã«ã—ãªãã¦è‰¯ã„
 	if(typeof configDataSave=='string'){
 		if((srcWindow=='profile'&&isSrcProfile)||(srcWindow!='profile'&&srcWindow==_Janetter_Window_Type)){
-			// ƒf[ƒ^‚ğˆø‚«“n‚·ê‡
-			// EŒ³‚ÌƒEƒBƒ“ƒhƒE‚ª profile ‚ÅA‹N“_‚ÌƒEƒBƒ“ƒhƒE‚Ìê‡
-			// @or
-			// EŒ³‚ÌƒEƒBƒ“ƒhƒE‚ª profile ‚Å‚Í‚È‚­‚ÄAŒ³‚ÌƒEƒBƒ“ƒhƒE‚ÆŒ»İ‚ÌƒEƒBƒ“ƒhƒE‚ªˆê’v‚·‚éê‡
-			// ˆø‚«“n‚µ—pƒf[ƒ^iconfigDataj‚ğƒGƒ“ƒR[ƒh‚·‚é
+			// ãƒ‡ãƒ¼ã‚¿ã‚’å¼•ãæ¸¡ã™å ´åˆ
+			// ãƒ»å…ƒã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒ profile ã§ã€èµ·ç‚¹ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å ´åˆ
+			// ã€€or
+			// ãƒ»å…ƒã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒ profile ã§ã¯ãªãã¦ã€å…ƒã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã¨ç¾åœ¨ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒä¸€è‡´ã™ã‚‹å ´åˆ
+			// å¼•ãæ¸¡ã—ç”¨ãƒ‡ãƒ¼ã‚¿ï¼ˆconfigDataï¼‰ã‚’ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã™ã‚‹
 			configData = configData.replaceAll('&','&amp;').replaceAll('"','&quot;');
-			// •Û‘¶—pƒf[ƒ^‚Í¶‚Ìó‘Ô‚È‚Ì‚ÅƒGƒ“ƒR[ƒh‚Ì•K—v‚È‚µ
+			// ä¿å­˜ç”¨ãƒ‡ãƒ¼ã‚¿ã¯ç”Ÿã®çŠ¶æ…‹ãªã®ã§ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã®å¿…è¦ãªã—
 		} else {
-			// ƒf[ƒ^‚ªˆø‚«“n‚³‚ê‚Ä‚«‚½ê‡
-			// EŒ³‚ÌƒEƒBƒ“ƒhƒE‚ª profile ‚ÅA‹N“_‚ÌƒEƒBƒ“ƒhƒE‚Å‚Í‚È‚¢ê‡
-			// @or
-			// EŒ³‚ÌƒEƒBƒ“ƒhƒE‚ÆŒ»İ‚ÌƒEƒBƒ“ƒhƒE‚ªˆê’v‚µ‚È‚¢ê‡
-			// ¦profile ‚ª‹N“_‚ÌƒEƒBƒ“ƒhƒE‚¾‚Á‚½ê‡‚É‚ÍAƒf[ƒ^‚Ìˆø‚«“n‚µ“_‚Å
-			// @isSrcProfile ‚ğ false ‚Éİ’è‚µ‚Ä‚¢‚é‚Ì‚ÅAˆø‚«“n‚³‚ê‚é‘¤‚Å‚±‚¿‚ç‚Ì
-			// @ğŒ‚É“K‡‚·‚é‚±‚Æ‚Í‚ ‚è“¾‚È‚¢
-			// •Û‘¶—pƒf[ƒ^iconfigDataSavej‚ğƒfƒR[ƒh‚·‚é
+			// ãƒ‡ãƒ¼ã‚¿ãŒå¼•ãæ¸¡ã•ã‚Œã¦ããŸå ´åˆ
+			// ãƒ»å…ƒã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒ profile ã§ã€èµ·ç‚¹ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã§ã¯ãªã„å ´åˆ
+			// ã€€or
+			// ãƒ»å…ƒã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã¨ç¾åœ¨ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒä¸€è‡´ã—ãªã„å ´åˆ
+			// â€»profile ãŒèµ·ç‚¹ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã ã£ãŸå ´åˆã«ã¯ã€ãƒ‡ãƒ¼ã‚¿ã®å¼•ãæ¸¡ã—æ™‚ç‚¹ã§
+			// ã€€isSrcProfile ã‚’ false ã«è¨­å®šã—ã¦ã„ã‚‹ã®ã§ã€å¼•ãæ¸¡ã•ã‚Œã‚‹å´ã§ã“ã¡ã‚‰ã®
+			// ã€€æ¡ä»¶ã«é©åˆã™ã‚‹ã“ã¨ã¯ã‚ã‚Šå¾—ãªã„
+			// ä¿å­˜ç”¨ãƒ‡ãƒ¼ã‚¿ï¼ˆconfigDataSaveï¼‰ã‚’ãƒ‡ã‚³ãƒ¼ãƒ‰ã™ã‚‹
 			configDataSave = configDataSave.replaceAll('&quot;','"').replaceAll('&amp;','&');
-			// ˆø‚«“n‚µ—pƒf[ƒ^‚ÍƒGƒ“ƒR[ƒh‚³‚ê‚½ó‘Ô‚Ì‚Ü‚ÜƒpƒXƒXƒ‹[‚·‚é
+			// å¼•ãæ¸¡ã—ç”¨ãƒ‡ãƒ¼ã‚¿ã¯ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã•ã‚ŒãŸçŠ¶æ…‹ã®ã¾ã¾ãƒ‘ã‚¹ã‚¹ãƒ«ãƒ¼ã™ã‚‹
 		}
 	}
-	// w’è‚³‚ê‚½İ’è€–Ú‚É•Û‘¶—pƒf[ƒ^‚ğ“ü‚ê‚é
+	// æŒ‡å®šã•ã‚ŒãŸè¨­å®šé …ç›®ã«ä¿å­˜ç”¨ãƒ‡ãƒ¼ã‚¿ã‚’å…¥ã‚Œã‚‹
 	jn.conf[configName] = configDataSave;
-	// ƒEƒBƒ“ƒhƒE‚²‚Æ‚Ìˆ—
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã”ã¨ã®å‡¦ç†
 	switch(_Janetter_Window_Type){
 		case 'main':
-			// Œ»İ‚ÌƒEƒBƒ“ƒhƒE‚ªƒƒCƒ“‚Ìê‡‚Ì‚İAdontSave ‚ª true ‚Å‚È‚¯‚ê‚Îƒf[ƒ^‚ğ•Û‘¶‚·‚é
+			// ç¾åœ¨ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒãƒ¡ã‚¤ãƒ³ã®å ´åˆã®ã¿ã€dontSave ãŒ true ã§ãªã‘ã‚Œã°ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹
 			if(!dontSave)
 				jn.setConfig(jn.conf);
-			// ˆÈ‰ºAmain ‚É—ˆ‚Ä‚¢‚é’iŠK‚ÅAisSrcProfile ‚Í•K‚¸ falseAdontSave ‚àl—¶‚Ì•K—v‚È‚µ
-			// ‚·‚×‚ÄAˆø‚«“n‚µæ‚ÌƒEƒBƒ“ƒhƒE‚ÍI’[‚È‚Ì‚ÅAŠY“–‚·‚éŠÖ”ˆÈŠO‚Íˆø‚«“n‚³‚È‚¢
-			// Œ³‚ÌƒEƒBƒ“ƒhƒEƒ^ƒCƒv‚ª‚Ç‚ê‚Å‚ ‚Á‚Ä‚àAprofile ‚É‚Í‚à‚ê‚È‚­ˆø‚«“n‚·
+			// ä»¥ä¸‹ã€main ã«æ¥ã¦ã„ã‚‹æ®µéšã§ã€isSrcProfile ã¯å¿…ãš falseã€dontSave ã‚‚è€ƒæ…®ã®å¿…è¦ãªã—
+			// ã™ã¹ã¦ã€å¼•ãæ¸¡ã—å…ˆã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã¯çµ‚ç«¯ãªã®ã§ã€è©²å½“ã™ã‚‹é–¢æ•°ä»¥å¤–ã¯å¼•ãæ¸¡ã•ãªã„
+			// å…ƒã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¿ã‚¤ãƒ—ãŒã©ã‚Œã§ã‚ã£ã¦ã‚‚ã€profile ã«ã¯ã‚‚ã‚Œãªãå¼•ãæ¸¡ã™
 			jn.webViewAction('profJS', {cmd:'syncConfig("'+srcWindow+'",'+false+',"'+configName+'","'+configData+'",'+configIsBoole+',"","'+funcExecOnProf+'","","",'+false+',"'+profTrack+'")'});
-			// Œ³‚ÌƒEƒBƒ“ƒhƒEƒ^ƒCƒv‚ª config ‚Å‚È‚¯‚ê‚ÎAconfig ‚Éˆø‚«“n‚·
+			// å…ƒã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¿ã‚¤ãƒ—ãŒ config ã§ãªã‘ã‚Œã°ã€config ã«å¼•ãæ¸¡ã™
 			if(srcWindow!='config')
 				jn.webViewAction('confJS', {cmd:'syncConfig("'+srcWindow+'",'+false+',"'+configName+'","'+configData+'",'+configIsBoole+',"","","'+funcExecOnConf+'","",'+false+',"'+profTrack+'")'});
-			// Œ³‚ÌƒEƒBƒ“ƒhƒEƒ^ƒCƒv‚ª notice ‚Å‚È‚¯‚ê‚ÎAnotice ‚Éˆø‚«“n‚·
+			// å…ƒã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¿ã‚¤ãƒ—ãŒ notice ã§ãªã‘ã‚Œã°ã€notice ã«å¼•ãæ¸¡ã™
 			if(srcWindow!='notice')
 				jn.webViewAction('noticeJS', {cmd:'syncConfig("'+srcWindow+'",'+false+',"'+configName+'","'+configData+'",'+configIsBoole+',"","","","'+funcExecOnNotice+'",'+false+',"'+profTrack+'")'});
-			if(srcWindow!='main' && funcExecOnMain)	// ©g‚ª‹N“_‚Ìê‡‚Í funcExecOnMain ‚ÍÀs‚µ‚È‚¢
+			if(srcWindow!='main' && funcExecOnMain)	// è‡ªèº«ãŒèµ·ç‚¹ã®å ´åˆã¯ funcExecOnMain ã¯å®Ÿè¡Œã—ãªã„
 				eval(funcExecOnMain+'()');
 			break;
 		case 'profile':
-			// profile ‚ÍA©g‚ÌƒEƒBƒ“ƒhƒEˆÈŠO‚ÉA“¯‚¶ƒ^ƒCƒv‚ÌƒEƒBƒ“ƒhƒE‚ª‘¼‚É‘¶İ‚·‚éƒP[ƒX‚ª‚ ‚é
-			// main ‚ğŒo—R‚µ‚Ä‘¼‚ÌƒEƒBƒ“ƒhƒE‚ÉŠgU‚³‚¹‚é‚ªA‚»‚Ì‰ß’ö‚Å main ‚©‚ç©g‚É‚à–ß‚Á‚Ä‚­‚é‚±‚Æ‚ğl—¶
-			if(srcWindow=='profile' && isSrcProfile){	// ©g‚ª”­MŒ³‚Ìê‡‚Ì‰‰ñÀsBƒtƒ‰ƒO‚ğ—§‚Ä‚Ä main ‚Éˆø‚«“n‚·
+			// profile ã¯ã€è‡ªèº«ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä»¥å¤–ã«ã€åŒã˜ã‚¿ã‚¤ãƒ—ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒä»–ã«å­˜åœ¨ã™ã‚‹ã‚±ãƒ¼ã‚¹ãŒã‚ã‚‹
+			// main ã‚’çµŒç”±ã—ã¦ä»–ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«æ‹¡æ•£ã•ã›ã‚‹ãŒã€ãã®éç¨‹ã§ main ã‹ã‚‰è‡ªèº«ã«ã‚‚æˆ»ã£ã¦ãã‚‹ã“ã¨ã‚’è€ƒæ…®
+			if(srcWindow=='profile' && isSrcProfile){	// è‡ªèº«ãŒç™ºä¿¡å…ƒã®å ´åˆã®åˆå›å®Ÿè¡Œã€‚ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã¦ main ã«å¼•ãæ¸¡ã™
 				var trackStr = randomStr(10);
 				isSrcProfileWindow[trackStr] = true;
 				jn.webViewAction('mainJS', {cmd:'syncConfig("profile",'+false+',"'+configName+'","'+configData+'",'+configIsBoole+',"'+funcExecOnMain+'","'+funcExecOnProf+'","'+funcExecOnConf+'","'+funcExecOnNotice+'",'+dontSave+',"'+trackStr+'")'});
 			}
-			if((srcWindow!='profile' || (profTrack!='' && !isSrcProfileWindow[profTrack])) && funcExecOnProf)	// ©g‚ª‹N“_‚Ìê‡‚Í funcExecOnProf ‚ÍÀs‚µ‚È‚¢
+			if((srcWindow!='profile' || (profTrack!='' && !isSrcProfileWindow[profTrack])) && funcExecOnProf)	// è‡ªèº«ãŒèµ·ç‚¹ã®å ´åˆã¯ funcExecOnProf ã¯å®Ÿè¡Œã—ãªã„
 				eval(funcExecOnProf+'()');
-			if(!isSrcProfile && isSrcProfileWindow[profTrack])	// ©g‚ª”­MŒ³‚Ìê‡‚Ì–ß‚è‚ÍAƒtƒ‰ƒO‚ğŒ³‚É–ß‚·
+			if(!isSrcProfile && isSrcProfileWindow[profTrack])	// è‡ªèº«ãŒç™ºä¿¡å…ƒã®å ´åˆã®æˆ»ã‚Šã¯ã€ãƒ•ãƒ©ã‚°ã‚’å…ƒã«æˆ»ã™
 				isSrcProfileWindow[profTrack] = false;
 			break;
 		case 'config':
-			if(srcWindow == 'config')	// ©g‚ª”­MŒ³‚Ìê‡‚Ì‚İ main ‚Éˆø‚«“n‚·
+			if(srcWindow == 'config')	// è‡ªèº«ãŒç™ºä¿¡å…ƒã®å ´åˆã®ã¿ main ã«å¼•ãæ¸¡ã™
 				jn.webViewAction('mainJS', {cmd:'syncConfig("config",'+false+',"'+configName+'","'+configData+'",'+configIsBoole+',"'+funcExecOnMain+'","'+funcExecOnProf+'","","'+funcExecOnNotice+'",'+dontSave+',"")'});
-			else if(funcExecOnConf)	// ©g‚ª‹N“_‚Ìê‡‚Í funcExecOnConf ‚ÍÀs‚µ‚È‚¢
+			else if(funcExecOnConf)	// è‡ªèº«ãŒèµ·ç‚¹ã®å ´åˆã¯ funcExecOnConf ã¯å®Ÿè¡Œã—ãªã„
 				eval(funcExecOnConf+'()');
 			break;
 		case 'notice':
-			if(srcWindow == 'notice')	// ©g‚ª”­MŒ³‚Ìê‡‚Ì‚İ main ‚Éˆø‚«“n‚·
+			if(srcWindow == 'notice')	// è‡ªèº«ãŒç™ºä¿¡å…ƒã®å ´åˆã®ã¿ main ã«å¼•ãæ¸¡ã™
 				jn.webViewAction('mainJS', {cmd:'syncConfig("notice",'+false+',"'+configName+'","'+configData+'",'+configIsBoole+',"'+funcExecOnMain+'","'+funcExecOnProf+'","'+funcExecOnConf+'","",'+dontSave+',"")'});
-			else if(funcExecOnNotice)	// ©g‚ª‹N“_‚Ìê‡‚Í funcExecOnNotice ‚ÍÀs‚µ‚È‚¢
+			else if(funcExecOnNotice)	// è‡ªèº«ãŒèµ·ç‚¹ã®å ´åˆã¯ funcExecOnNotice ã¯å®Ÿè¡Œã—ãªã„
 				eval(funcExecOnNotice+'()');
 			break;
 	}
 	return true;
 };
 
-// œsyncConfig ƒRƒƒ“ƒg”²‚«”Å
+// â—syncConfig ã‚³ãƒ¡ãƒ³ãƒˆæŠœãç‰ˆ
 var isSrcProfileWindow = {};
 syncConfig = function(srcWindow, isSrcProfile, configName, configData, configIsBoole, funcExecOnMain, funcExecOnProf, funcExecOnConf, funcExecOnNotice, dontSave, profTrack){
 	var dataIsEmpty = (configData==undefined),
@@ -469,19 +469,19 @@ syncConfig = function(srcWindow, isSrcProfile, configName, configData, configIsB
 		srcWindow = arguments[0].srcWindow || _Janetter_Window_Type;
 	}
 	if(!srcWindow){
-		console.warn('syncConfigFsrcWindow ‚ª•s‘«‚µ‚Ä‚¢‚Ü‚·B');
+		console.warn('syncConfigï¼šsrcWindow ãŒä¸è¶³ã—ã¦ã„ã¾ã™ã€‚');
 		return false;
 	}
 	if(!configName){
-		console.warn('syncConfigFconfigName ‚ª•s‘«‚µ‚Ä‚¢‚Ü‚·B');
+		console.warn('syncConfigï¼šconfigName ãŒä¸è¶³ã—ã¦ã„ã¾ã™ã€‚');
 		return false;
 	}
 	if(dataIsEmpty){
-		console.warn('syncConfigFconfigData ‚ª•s‘«‚µ‚Ä‚¢‚Ü‚·B');
+		console.warn('syncConfigï¼šconfigData ãŒä¸è¶³ã—ã¦ã„ã¾ã™ã€‚');
 		return false;
 	}
 	if(lackSrcProfile){
-		console.warn('syncConfigFisSrcProfile ‚ª•s‘«‚µ‚Ä‚¢‚Ü‚·B');
+		console.warn('syncConfigï¼šisSrcProfile ãŒä¸è¶³ã—ã¦ã„ã¾ã™ã€‚');
 		return false;
 	}
 	isSrcProfile = (typeof isSrcProfile=='string') ?
@@ -552,10 +552,10 @@ syncConfig = function(srcWindow, isSrcProfile, configName, configData, configIsB
 	return true;
 };
 
-// œƒƒbƒZ[ƒW‚Ì–|–óƒf[ƒ^‚ğ’Ç‰Á
-// msg ‚Í‚»‚Ì‰º‚É˜A‘z”z—ñ‚Å en ‚â ja ‚È‚Ç‚ÌŒ¾ŒêƒR[ƒh•Ê‚É•¶š—ñƒŠƒ\[ƒX‚ğA‚³‚ç‚É˜A‘z”z—ñ‚Æ‚µ‚Ä‚Á‚Ä‚¢‚é‚±‚Æ‚ª‘O’ñ
-// —˜—p•û–@‚Í @ginlime ‚Ìƒvƒ‰ƒOƒCƒ“‚ğQÆ‚Ì‚±‚Æijanet.onGetMessages ‚ğæ‚Áæ‚Á‚ÄAƒIƒŠƒWƒiƒ‹‚ÌÀs‘O‚ÉÀs‚·‚éj
-// additionalProc ‚ÉŠÖ”‚ğw’è‚·‚é‚±‚Æ‚ÅA—á‚¦‚Î“Á’è‚Ìƒf[ƒ^‚ğ format ‚·‚é‚Æ‚¢‚Á‚½‚æ‚¤‚È‰ÁH‚ª‰Â”\
+// â—ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®ç¿»è¨³ãƒ‡ãƒ¼ã‚¿ã‚’è¿½åŠ 
+// msg ã¯ãã®ä¸‹ã«é€£æƒ³é…åˆ—ã§ en ã‚„ ja ãªã©ã®è¨€èªã‚³ãƒ¼ãƒ‰åˆ¥ã«æ–‡å­—åˆ—ãƒªã‚½ãƒ¼ã‚¹ã‚’ã€ã•ã‚‰ã«é€£æƒ³é…åˆ—ã¨ã—ã¦æŒã£ã¦ã„ã‚‹ã“ã¨ãŒå‰æ
+// åˆ©ç”¨æ–¹æ³•ã¯ @ginlime ã®ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã‚’å‚ç…§ã®ã“ã¨ï¼ˆjanet.onGetMessages ã‚’ä¹—ã£å–ã£ã¦ã€ã‚ªãƒªã‚¸ãƒŠãƒ«ã®å®Ÿè¡Œå‰ã«å®Ÿè¡Œã™ã‚‹ï¼‰
+// additionalProc ã«é–¢æ•°ã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã§ã€ä¾‹ãˆã°ç‰¹å®šã®ãƒ‡ãƒ¼ã‚¿ã‚’ format ã™ã‚‹ã¨ã„ã£ãŸã‚ˆã†ãªåŠ å·¥ãŒå¯èƒ½
 addTranslateData = function(msg, additionalProc){
 	var msgData = msg[jn.conf.lang];
 	if(msgData == undefined)
@@ -564,13 +564,13 @@ addTranslateData = function(msg, additionalProc){
 	assignTo(jn.msg, msgData);
 };
 
-// œ”’l‚ğ¸‡‚Å“ü‚ê‚½”z—ñ‚É‘Î‚µAw’è‚µ‚½’l‚ª‚Ç‚Ì index ‚ÌŠÔ‚É‚ ‚èA
-// ‚»‚Ì”ÍˆÍ‚Å‚Ì”ä—¦‚Í‚¢‚­‚Â‚È‚Ì‚©
-// –ß‚è’lFobject
-// @@@@startFŠJn index
-// @@@@endFI—¹ index
-// @@@@ratioF”ä—¦
-// ”ÍˆÍŠO‚Ìê‡‚ÍA‚·‚×‚Ä -1 ‚Å•Ô‚·
+// â—æ•°å€¤ã‚’æ˜‡é †ã§å…¥ã‚ŒãŸé…åˆ—ã«å¯¾ã—ã€æŒ‡å®šã—ãŸå€¤ãŒã©ã® index ã®é–“ã«ã‚ã‚Šã€
+// ãã®ç¯„å›²ã§ã®æ¯”ç‡ã¯ã„ãã¤ãªã®ã‹
+// æˆ»ã‚Šå€¤ï¼šobject
+// ã€€ã€€ã€€ã€€startï¼šé–‹å§‹ index
+// ã€€ã€€ã€€ã€€endï¼šçµ‚äº† index
+// ã€€ã€€ã€€ã€€ratioï¼šæ¯”ç‡
+// ç¯„å›²å¤–ã®å ´åˆã¯ã€ã™ã¹ã¦ -1 ã§è¿”ã™
 checkBetween = function(targetArray, value){
 	var aryLen = targetArray.length,
 		start = -1,
@@ -587,9 +587,9 @@ checkBetween = function(targetArray, value){
 	return {'start':start, 'end':end, 'ratio':ratio};
 };
 
-// œ”ä—¦‚ğ’l‚Ü‚½‚Í”z—ñ‚É“K—p‚·‚é
-// ‘ÎÛ‚Æ‚È‚é’l‚ÌŒ^‚Í“¯ˆê‚Å‚ ‚é‚±‚Æ‚ğ‘O’ñ‚Æ‚µA”z—ñ‚Ì’·‚³‚à“¯ˆê‚Å‚ ‚é‚à‚Ì‚Æ‚·‚é
-// –ß‚è’l‚Í‚·‚×‚Ä®”‚É‚È‚é
+// â—æ¯”ç‡ã‚’å€¤ã¾ãŸã¯é…åˆ—ã«é©ç”¨ã™ã‚‹
+// å¯¾è±¡ã¨ãªã‚‹å€¤ã®å‹ã¯åŒä¸€ã§ã‚ã‚‹ã“ã¨ã‚’å‰æã¨ã—ã€é…åˆ—ã®é•·ã•ã‚‚åŒä¸€ã§ã‚ã‚‹ã‚‚ã®ã¨ã™ã‚‹
+// æˆ»ã‚Šå€¤ã¯ã™ã¹ã¦æ•´æ•°ã«ãªã‚‹
 applyRatio = function(targetA, targetB, ratio){
 	if(typeof targetA == "object"){
 		var targetLen = targetA.length,
@@ -603,7 +603,7 @@ applyRatio = function(targetA, targetB, ratio){
 	}
 };
 
-// œObject ‚Ìq—v‘f”i˜A‘z”z—ñ‚Ì—v‘f”j
+// â—Object ã®å­è¦ç´ æ•°ï¼ˆé€£æƒ³é…åˆ—ã®è¦ç´ æ•°ï¼‰
 objectLength = function(obj){
 	var cnt = 0;
 	$.each(obj, function(){
@@ -612,11 +612,11 @@ objectLength = function(obj){
 	return cnt;
 };
 
-// œƒI[ƒo[ƒŒƒC•t‚«‚ÌƒvƒƒOƒŒƒXƒo[‚ğ•\¦‚·‚é jquery.ui.progressOverlay
-// jquery.ui.dialog ‚Æ jquery.ui.progressbar ‚ğQl‚Éì¬
-// Janetter ‚Í Chrome ƒx[ƒX‚Ì‚½‚ßAIE6 ‚ÍŠ®‘S‚É–³‹‚µ‚Ä‚¢‚é‚Ì‚ÅA
-// ˆÚA‚È‚Ç‚µ‚ÄƒNƒƒXƒuƒ‰ƒEƒU‚Åg‚¤ê‡‚É‚Í’ˆÓ
-// ÀÛ‚Ìg—p—á‚ÍAˆêŠ‡ƒuƒƒbƒNƒvƒ‰ƒOƒCƒ“‚ğQÆ‚Ì‚±‚Æ
+// â—ã‚ªãƒ¼ãƒãƒ¼ãƒ¬ã‚¤ä»˜ãã®ãƒ—ãƒ­ã‚°ãƒ¬ã‚¹ãƒãƒ¼ã‚’è¡¨ç¤ºã™ã‚‹ jquery.ui.progressOverlay
+// jquery.ui.dialog ã¨ jquery.ui.progressbar ã‚’å‚è€ƒã«ä½œæˆ
+// Janetter ã¯ Chrome ãƒ™ãƒ¼ã‚¹ã®ãŸã‚ã€IE6 ã¯å®Œå…¨ã«ç„¡è¦–ã—ã¦ã„ã‚‹ã®ã§ã€
+// ç§»æ¤ãªã©ã—ã¦ã‚¯ãƒ­ã‚¹ãƒ–ãƒ©ã‚¦ã‚¶ã§ä½¿ã†å ´åˆã«ã¯æ³¨æ„
+// å®Ÿéš›ã®ä½¿ç”¨ä¾‹ã¯ã€ä¸€æ‹¬ãƒ–ãƒ­ãƒƒã‚¯ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã‚’å‚ç…§ã®ã“ã¨
 
 var uiProgressClasses = 
 		'ui-progressOverlay ' +
@@ -640,7 +640,7 @@ $.widget("ui.progressOverlay", {
 			}
 		},
 		autoOpen: true,
-		closeOnEscape: false,	// ƒfƒoƒbƒO—p
+		closeOnEscape: false,	// ãƒ‡ãƒãƒƒã‚°ç”¨
 		value: 0,
 		max: 100,
 		msg: '',
@@ -1046,6 +1046,6 @@ $.extend($.ui.progressOverlay.overlay.prototype, {
 		$.ui.progressOverlay.overlay.destroy(this.$el);
 	}
 });
-// jquery.ui.progressOverlay ‚±‚±‚Ü‚Å
+// jquery.ui.progressOverlay ã“ã“ã¾ã§
 
 })(jQuery, janet);
