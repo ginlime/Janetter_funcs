@@ -173,6 +173,26 @@ Array.prototype.removestr = function(str, global, ignoreCase){
 	return resultArray;
 };
 
+// ●配列から与えられた配列に含まれる項目を取り除く
+Array.prototype.removematchAry = function(array){
+	var _targetArray = this,
+		_targetArrayLen = _targetArray.length,
+		_resultArray = new Array(),
+		_matchAryLen = array.length;
+	for(var i = 0; i < _targetArrayLen; i++){
+		var matched = false;
+		for(var j = 0; j < _matchAryLen; j++){
+			if (_targetArray[i]==array[j]){
+				matched = true;
+				break;
+			}
+		}
+		if(!matched)
+			_resultArray.push(_targetArray[i]);
+	}
+	return _resultArray;
+};
+
 // ●配列から指定文字数より長い項目を取り除く
 Array.prototype.limitlength = function(len){
 	var targetArray = this,
