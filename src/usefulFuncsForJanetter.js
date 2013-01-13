@@ -263,6 +263,41 @@ function _determinPlatform(){
 			(navigator.userAgent.indexOf('Macintosh')>=0) ? 'Mac' : 'other';
 }
 
+// ●プロフィールユーザーをブロックしているか
+// プロフィール画面専用
+// データを使うときに都度取得の必要あり
+_getBlocking = function(){
+	return $('#prof-main #content .tab01 .footerBtn button.block').hasClass('unblock');
+};
+
+// ●プロフィールユーザーからフォローされているか
+// プロフィール画面専用
+// データを使うときに都度取得の必要あり
+_getFollowed = function(){
+	return (!_getBlocking() && $('#prof-main #header #follow-info p.notFollowed').hasClass('hide'));
+};
+
+// ●プロフィールユーザーをフォローしているか
+// プロフィール画面専用
+// データを使うときに都度取得の必要あり
+_getFollowing = function(){
+	return (!_getBlocking() && $('#prof-main #header #follow-info a.goFollow').hasClass('hide'));
+};
+
+// ●プロフィールユーザーと相互フォローか
+// プロフィール画面専用
+// データを使うときに都度取得の必要あり
+_getIsFriend = function(){
+	return (_getFollowed() && _getFollowing());
+};
+
+// ●プロフィールユーザーは非公開か
+// プロフィール画面専用
+// データを使うときに都度取得の必要あり
+_getProtected = function(){
+	return ($('#prof-main #user-info img.protected').length>0);
+};
+
 // ●指定文字数のランダム文字列を生成
 // http://blog.bornneet.com/Entry/143/
 // http://webengineerlife.com/2011/10/20/javascript-random-text/
