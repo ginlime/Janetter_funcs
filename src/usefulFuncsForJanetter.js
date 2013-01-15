@@ -369,6 +369,7 @@ randomStr = function(len, additional){
 // ※「funcExecOn～」の関数に引数は渡せないので、引数が不要な形にしておくこと
 // ※すべてのウィンドウに設定が飛ぶようになったため、初期化の場合を除いて、jn.conf に何か値をセットしたときは、必ず syncConfig も実行する必要がある。
 // 　profile や config と違い、notice は見えていないが常時動作しているため、main で値を変えただけだと、終了時に notice 側に残っている値が設定されてしまうことがある。
+// 　なお、config の close 処理および save～ 処理の中では実行してはいけない。
 // ※↓の変数も必要
 var isSrcProfileWindow = {};
 syncConfig = function(srcWindow, isSrcProfile, configName, configData, configIsBoole, funcExecOnMain, funcExecOnProf, funcExecOnConf, funcExecOnNotice, dontSave, profTrack){
