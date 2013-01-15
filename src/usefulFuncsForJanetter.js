@@ -367,6 +367,9 @@ randomStr = function(len, additional){
 // 	dontSave：メイン画面で保存をしない（true/false）。複数の設定項目の同期を取る場合など連続して syncConfig をかける場合に使う
 // 	profTrack：プロフィール画面で実行したとき、メイン画面からの戻りをトラッキングするための文字列。自動生成するため、通常は指定なし
 // ※「funcExecOn～」の関数に引数は渡せないので、引数が不要な形にしておくこと
+// ※すべてのウィンドウに設定が飛ぶようになったため、jn.conf に何か値をセットしたときは、必ず syncConfig も実行する必要がある。
+// 　profile や config と違い、notice は見えていないが常時動作しているため、main で値を変えただけだと、終了時に notice 側に残っている
+// 　値が設定されてしまうことがある。
 // ※↓の変数も必要
 var isSrcProfileWindow = {};
 syncConfig = function(srcWindow, isSrcProfile, configName, configData, configIsBoole, funcExecOnMain, funcExecOnProf, funcExecOnConf, funcExecOnNotice, dontSave, profTrack){
